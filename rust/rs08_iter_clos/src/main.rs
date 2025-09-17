@@ -8,7 +8,13 @@ fn main() {
 	];
 
 	let big_strings: Vec<_> = strings.iter().filter(|x| x.len() > 5).collect();
-
+	// same as:
+	// let big_strings: Vec<&String> = strings.iter()
+	// .filter(|x| {
+	// 		x.len() > 5
+	// }
+	// ).collect();
+	
 	println!("Big strings:");
 	for s in big_strings.iter() {
 		println!("\t{}", s);
